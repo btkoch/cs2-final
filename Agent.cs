@@ -13,6 +13,7 @@ namespace cs2_final
             Category = "Agent";
             SalaryPercentage = 7m;
             CalculatePayment(athleteSalary);
+            // fart
         }
     }
 }
