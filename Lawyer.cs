@@ -8,29 +8,11 @@ namespace cs2_final
 {
     internal class Lawyer : Professional
     {
-        // Fields
-        private readonly decimal _rate = .1m;
-        private readonly string _profession = "Lawyer";
-
-        // Properties
-
-        // Constructors
-        public Lawyer(decimal athleteSalary): base ()
-            
+        public Lawyer(string name, decimal athleteSalary) : base(name)
         {
-            _athleteSalary = athleteSalary;
+            Category = "Lawyer";
+            SalaryPercentage = 10m; 
+            CalculatePayment(athleteSalary);
         }
-
-        // Methods
-        protected override decimal GetRate()
-        {
-            return _rate;
-        }
-
-        protected override string GetProfession()
-        {
-            return _profession;
-        }
-        
     }
 }

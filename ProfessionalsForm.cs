@@ -13,15 +13,15 @@ namespace cs2_final
     public partial class ProfessionalsForm : Form
     {
         // Fields
-        private readonly decimal _salary;
+        private readonly decimal _athleteSalary;
 
         // Properties
 
         //Constructors
-        public ProfessionalsForm(decimal salary)
+        public ProfessionalsForm(decimal athleteSalary)
         {
             InitializeComponent();
-            _salary = salary;
+            _athleteSalary = athleteSalary;
         }
 
         // Methods
@@ -31,7 +31,7 @@ namespace cs2_final
             if (prof == null) { return; }
 
             // TODO: Figure out why prof.Salary is always 0
-            MessageBox.Show(prof.ToString());
+            MessageBox.Show(prof.Payment.ToString());
         }
 
         private Professional GetProfessional()
@@ -40,13 +40,13 @@ namespace cs2_final
             switch (GetSelectedCategory().Tag.ToString())
             {
                 case ("lawyer"):
-                    return new Lawyer(_salary);
+                    return new Lawyer(nameTxt.Text.Trim(), _athleteSalary);
                 case ("asst"):
-                    return new Assistant(_salary);
+                    return new Assistant(nameTxt.Text.Trim(), _athleteSalary);
                 case ("agent"):
-                    return new Agent(_salary);
+                    return new Agent(nameTxt.Text.Trim(), _athleteSalary);
                 case ("trainer"):
-                    return new Trainer(_salary);
+                    return new Trainer(nameTxt.Text.Trim(), _athleteSalary);
                 default:
                     return null;
             }
@@ -64,7 +64,7 @@ namespace cs2_final
         // Events
         private void ProfessionalsForm_Load(object sender, EventArgs e)
         {
-            salaryLbl.Text = _salary.ToString("C");
+            salaryLbl.Text = _athleteSalary.ToString("C");
         }
 
         private void addBtn_Click(object sender, EventArgs e)

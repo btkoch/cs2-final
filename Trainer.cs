@@ -8,20 +8,11 @@ namespace cs2_final
 {
     internal class Trainer : Professional
     {
-        // Fields
-        private static decimal _rate = .05m;
-        private string _profession = "Trainer";
-
-        // Properties
-
-        // Constructors
-        public Trainer(decimal athleteSalary) { _athleteSalary = athleteSalary; }
-
-        // Methods
-        protected override decimal GetRate()
+        public Trainer(string name, decimal athleteSalary) : base(name)
         {
-            return _rate;
+            Category = "Trainer";
+            SalaryPercentage = 5m;
+            CalculatePayment(athleteSalary);
         }
-
     }
 }

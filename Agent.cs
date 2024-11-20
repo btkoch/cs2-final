@@ -8,20 +8,11 @@ namespace cs2_final
 {
     internal class Agent : Professional
     {
-        // Fields
-        private readonly decimal _rate = .07m;
-        private string _profession = "Agent";
-
-        // Properties
-
-        // Constructors
-        public Agent(decimal athleteSalary) { _athleteSalary = athleteSalary; }
-
-        //Methods
-        protected override decimal GetRate()
+        public Agent(string name, decimal athleteSalary) : base(name)
         {
-            return _rate;
+            Category = "Agent";
+            SalaryPercentage = 7m;
+            CalculatePayment(athleteSalary);
         }
-
     }
 }

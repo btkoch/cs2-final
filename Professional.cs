@@ -8,37 +8,25 @@ namespace cs2_final
 {
     internal abstract class Professional
     {
-        // Fields
-        private string _name;
-        private decimal _salary;
-        public decimal _athleteSalary;
+        public string Name { get; set; }
+        public string Category { get; protected set; }
+        public decimal SalaryPercentage { get; protected set; } 
+        public decimal Payment {  get; protected set; }
 
-        // Properties
-        public string Name
-        { 
-            get { return _name; }
-            set { _name = value; }
+        public Professional(string name)
+        {
+            Name = name;
         }
 
-        public decimal Salary
+        public string ToString(decimal athleteSalary)
         {
-            get { return _salary; }
-            set { _salary = GetRate() * _athleteSalary; }
-        }
-        
-        // Constructors
+            return $"{Name}, {Category}, {Payment:C}";
 
-        // Methods
-        public override string ToString() { return _name + ", " + GetProfession()+ ", " +_salary; }
-
-        protected virtual decimal GetRate()
-        {
-            return 0;
         }
 
-        protected virtual string GetProfession()
+        public void CalculatePayment(decimal athleteSalary)
         {
-            return "";
+            Payment = athleteSalary * SalaryPercentage / 100;
         }
     }
 }

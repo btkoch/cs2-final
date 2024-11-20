@@ -8,21 +8,11 @@ namespace cs2_final
 {
     internal class Assistant : Professional
     {
-        // Fields
-        private static decimal _rate = .03m;
-        private string _profession = "Personal Assistant";
-        
-        // Properties
-
-        // Constructors
-        public Assistant(decimal athleteSalary) { _athleteSalary = athleteSalary; }
-
-        // Methods
-
-        protected override decimal GetRate()
+        public Assistant(string name, decimal athleteSalary) : base(name)
         {
-            return _rate;
+            Category = "Personal Assistant";
+            SalaryPercentage = 3m;
+            CalculatePayment(athleteSalary);
         }
-
     }
 }
