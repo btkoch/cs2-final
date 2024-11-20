@@ -9,20 +9,21 @@ namespace cs2_final
     internal abstract class Professional
     {
         
-        public string Name { get; set; }//first name
+        public string FirstName { get; set; }//first name
         public string LastName { get; set; }//last name
         public string Category { get; protected set; }//professional type
         public decimal SalaryPercentage { get; protected set; } 
         public decimal Payment {  get; protected set; }//professionals salary
 
-        public Professional(string name, string lstName)
+        public Professional(string firstName, string lastName)
         {
-            Name = name; LastName = lstName;
+            FirstName = firstName; 
+            LastName = lastName;
         }
 
         public override string ToString()
         {
-            return $"{Name} {LastName}: {Category} | ${Payment:C}";
+            return $"{FirstName} {LastName}: {Category} | ${Payment:C}";
         }
 
         public void CalculatePayment(decimal athleteSalary)

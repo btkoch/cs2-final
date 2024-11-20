@@ -8,7 +8,7 @@ namespace cs2_final
 {
     internal class Trainer : Professional
     {
-        public Trainer(string name, decimal athleteSalary) : base(name)
+        public Trainer(string firstName, string lastName, decimal athleteSalary) : base(firstName, lastName)
         {
             Category = "Trainer";
             SalaryPercentage = 5m;
