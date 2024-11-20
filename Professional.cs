@@ -18,7 +18,7 @@ namespace cs2_final
             Name = name;
         }
 
-        public string ToString(decimal athleteSalary)
+        public override string ToString()
         {
             return $"{Name}, {Category}, {Payment:C}";
 
