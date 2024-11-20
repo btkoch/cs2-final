@@ -10,20 +10,16 @@ namespace cs2_final
     // but the compiler isn't happy unless it's public.
     public class Athlete
     {
-        // Fields
         private decimal _salary;
 
-        // Properties
         public decimal Salary { 
             get { return _salary; } 
             set { _salary = value; } 
         }
 
-        // Constructors
         public Athlete(decimal salary) {
             _salary = salary;
         }
 
-        // Methods
     }
 }
