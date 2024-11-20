@@ -41,19 +41,33 @@ namespace cs2_final
 
         private Professional GetProfessional()
         {
-            // Return professional based on selected category
-            switch (SelectedCategory().Tag.ToString())
+            try
             {
-                case ("lawyer"):
-                    return new Lawyer(nameTxt.Text.Trim(), _athleteSalary);
-                case ("asst"):
-                    return new Assistant(nameTxt.Text.Trim(), _athleteSalary);
-                case ("agent"):
-                    return new Agent(nameTxt.Text.Trim(), _athleteSalary);
-                case ("trainer"):
-                    return new Trainer(nameTxt.Text.Trim(), _athleteSalary);
-                default:
+                string[] name = nameTxt.Text.Trim().Split(' ');
+                if (name.Length > 2)
+                {
+                    MessageBox.Show("Enter first and last name only, or check for and remove double spaces", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
+                }
+                // Return professional based on selected category
+                switch (SelectedCategory().Tag.ToString())
+                {
+                    case ("lawyer"):
+                        return new Lawyer(name[0], name[1], _athleteSalary);
+                    case ("asst"):
+                        return new Assistant(name[0], name[1], _athleteSalary);
+                    case ("agent"):
+                        return new Agent(name[0], name[1], _athleteSalary);
+                    case ("trainer"):
+                        return new Trainer(name[0], name[1], _athleteSalary);
+                    default:
+                        return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
 
