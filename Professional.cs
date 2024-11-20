@@ -22,7 +22,7 @@ namespace cs2_final
 
         public override string ToString()
         {
-            return $"{Name}, {LastName},: {Category}, : ${Payment:C}";
+            return $"{Name} {LastName}: {Category} | ${Payment:C}";
         }
 
         public void CalculatePayment(decimal athleteSalary)
