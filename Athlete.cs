@@ -19,6 +19,7 @@ namespace cs2_final
 
         public Athlete(decimal salary) {
             _salary = salary;
+            //hey bitch
         }
 
     }
