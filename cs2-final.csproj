@@ -129,15 +129,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="athlete.accdb">
+    <Content Include="ProfessionalsDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1.mdf">
+    <Content Include="ProfessionalsDb_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database1_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
+      <DependentUpon>ProfessionalsDb.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
