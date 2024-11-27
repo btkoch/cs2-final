@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -72,6 +72,11 @@
     </Compile>
     <Compile Include="Assistant.cs" />
     <Compile Include="Agent.cs" />
+    <Compile Include="HiredProfessionalsDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HiredProfessionalsDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Trainer.cs" />
     <Compile Include="Lawyer.cs" />
     <Compile Include="Professional.cs" />
@@ -115,6 +120,17 @@
     <None Include="athleteDataSet.xss">
       <DependentUpon>athleteDataSet.xsd</DependentUpon>
     </None>
+    <None Include="HiredProfessionalsDBDataSet.xsc">
+      <DependentUpon>HiredProfessionalsDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HiredProfessionalsDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HiredProfessionalsDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HiredProfessionalsDBDataSet.xss">
+      <DependentUpon>HiredProfessionalsDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,6 +145,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HiredProfessionalsDB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HiredProfessionalsDB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>HiredProfessionalsDB.mdf</DependentUpon>
+    </Content>
     <Content Include="ProfessionalsDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -82,6 +82,8 @@ namespace cs2_final
 
         private void ProfessionalsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed.
+            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
             salaryLbl.Text = _athleteSalary.ToString("C");
         }
 
@@ -91,6 +93,19 @@ namespace cs2_final
             if (SelectedCategory() == null) return;
 
             AddProfessional();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void professionalsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.professionalsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+
         }
     }
 }

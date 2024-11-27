@@ -37,6 +37,16 @@ namespace cs2_final
 
         private void AthleteSalary_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Athletes' table. You can move, or remove it, as needed.
+            this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
+        }
+
+        private void athletesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.athletesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+
         }
     }
 }
