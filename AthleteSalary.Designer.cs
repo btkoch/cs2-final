@@ -31,6 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AthleteSalary));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hireProfBtn = new System.Windows.Forms.Button();
+            this.athFirstnameTxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.athLstnameTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
             this.salaryTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,17 +44,17 @@
             this.athletesTableAdapter = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.AthletesTableAdapter();
             this.tableAdapterManager = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager();
             this.athletesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.athletesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.athletesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,30 +71,77 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.hireProfBtn);
+            this.groupBox1.Controls.Add(this.athFirstnameTxt);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.athLstnameTxt);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.submitBtn);
             this.groupBox1.Controls.Add(this.salaryTxt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(275, 70);
+            this.groupBox1.Size = new System.Drawing.Size(275, 148);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Athlete Salary";
             // 
+            // hireProfBtn
+            // 
+            this.hireProfBtn.Location = new System.Drawing.Point(25, 119);
+            this.hireProfBtn.Name = "hireProfBtn";
+            this.hireProfBtn.Size = new System.Drawing.Size(102, 23);
+            this.hireProfBtn.TabIndex = 7;
+            this.hireProfBtn.Text = "Hire Professionals";
+            this.hireProfBtn.UseVisualStyleBackColor = true;
+            this.hireProfBtn.Click += new System.EventHandler(this.hireProfBtn_Click);
+            // 
+            // athFirstnameTxt
+            // 
+            this.athFirstnameTxt.Location = new System.Drawing.Point(100, 16);
+            this.athFirstnameTxt.Name = "athFirstnameTxt";
+            this.athFirstnameTxt.Size = new System.Drawing.Size(169, 20);
+            this.athFirstnameTxt.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Enter First Name:";
+            // 
+            // athLstnameTxt
+            // 
+            this.athLstnameTxt.Location = new System.Drawing.Point(100, 42);
+            this.athLstnameTxt.Name = "athLstnameTxt";
+            this.athLstnameTxt.Size = new System.Drawing.Size(169, 20);
+            this.athLstnameTxt.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Enter Last Name: ";
+            // 
             // submitBtn
             // 
             this.submitBtn.Enabled = false;
-            this.submitBtn.Location = new System.Drawing.Point(194, 39);
+            this.submitBtn.Location = new System.Drawing.Point(148, 119);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(75, 23);
+            this.submitBtn.Size = new System.Drawing.Size(102, 23);
             this.submitBtn.TabIndex = 2;
-            this.submitBtn.Text = "&Submit";
+            this.submitBtn.Text = "Add Athlete";
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // salaryTxt
             // 
-            this.salaryTxt.Location = new System.Drawing.Point(169, 13);
+            this.salaryTxt.Location = new System.Drawing.Point(169, 68);
             this.salaryTxt.Name = "salaryTxt";
             this.salaryTxt.Size = new System.Drawing.Size(100, 20);
             this.salaryTxt.TabIndex = 1;
@@ -98,7 +150,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(6, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(164, 13);
             this.label1.TabIndex = 0;
@@ -155,6 +207,31 @@
             this.athletesBindingNavigator.TabIndex = 2;
             this.athletesBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -182,22 +259,16 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -205,7 +276,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -214,38 +285,20 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // athletesBindingNavigatorSaveItem
             // 
             this.athletesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.athletesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("athletesBindingNavigatorSaveItem.Image")));
             this.athletesBindingNavigatorSaveItem.Name = "athletesBindingNavigatorSaveItem";
-            this.athletesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.athletesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.athletesBindingNavigatorSaveItem.Text = "Save Data";
             this.athletesBindingNavigatorSaveItem.Click += new System.EventHandler(this.athletesBindingNavigatorSaveItem_Click);
             // 
@@ -259,9 +312,9 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.athletesDataGridView.DataSource = this.athletesBindingSource;
-            this.athletesDataGridView.Location = new System.Drawing.Point(12, 97);
+            this.athletesDataGridView.Location = new System.Drawing.Point(12, 177);
             this.athletesDataGridView.Name = "athletesDataGridView";
-            this.athletesDataGridView.Size = new System.Drawing.Size(446, 224);
+            this.athletesDataGridView.Size = new System.Drawing.Size(446, 144);
             this.athletesDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
@@ -342,5 +395,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TextBox athFirstnameTxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox athLstnameTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button hireProfBtn;
     }
 }

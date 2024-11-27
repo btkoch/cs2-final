@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,7 +22,29 @@ namespace cs2_final
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            var athlete = new Athlete(decimal.Parse(salaryTxt.Text));
+            string fName, lName;
+            decimal salary;
+            fName = athFirstnameTxt.Text.Trim();
+            lName = athLstnameTxt.Text.Trim();
+            //create athlete object if valid inputs are entered then add values from object to athlete database.
+            if (fName != "" && lName != "" && decimal.TryParse(salaryTxt.Text, out salary) && salary > 0)
+            {
+                Athlete athlete = new Athlete(fName,lName,salary);
+
+                this.athletesTableAdapter.Insert(athlete.Firstname, athlete.Lastname, athlete.Salary);
+                this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+                this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
+            }
+            else
+            {
+                MessageBox.Show("Enter valid athlete information");
+            }
+            
+        }
+        private void hireProfBtn_Click(object sender, EventArgs e)
+        {
+            //edit below this block to move to professionals form if user has selected a athlete from the datagrid
+            //pass the athlete salary and athleteID to the new form
             var professionalsForm = new ProfessionalsForm(salary);
             professionalsForm.Closed += (s, args) => this.Close();
             professionalsForm.Show();
@@ -47,6 +70,11 @@ namespace cs2_final
             this.athletesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
 
+        }
+        private void bindingNavigatorPositionItem_TextChanged(object sender, EventArgs e)
+        {
+            //TODO:
+            //only enable hire professional button if a athlete is selected
         }
     }
 }
