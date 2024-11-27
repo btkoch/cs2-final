@@ -31,12 +31,7 @@ namespace cs2_final
 
         private void RefreshPreview()
         {
-            previewListBox.Items.Clear();
-            foreach (var prof in _professionalList)
-            {
-                // TODO: Cleaner formatting
-                previewListBox.Items.Add(prof.ToString());
-            }
+            //add code to update professionals table
         }
 
         private Professional GetProfessional()

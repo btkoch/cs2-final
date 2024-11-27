@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using cs2_final.athleteDataSetTableAdapters;
+using cs2_final.HiredProfessionalsDBDataSetTableAdapters;
 
 namespace cs2_final
 {
