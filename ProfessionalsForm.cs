@@ -26,17 +26,6 @@ namespace cs2_final
             var prof = GetProfessional();
             if (prof == null) { return; }
             _professionalList.Add(prof);
-            RefreshPreview();
-        }
-
-        private void RefreshPreview()
-        {
-            previewListBox.Items.Clear();
-            foreach (var prof in _professionalList)
-            {
-                // TODO: Cleaner formatting
-                previewListBox.Items.Add(prof.ToString());
-            }
         }
 
         private Professional GetProfessional()
