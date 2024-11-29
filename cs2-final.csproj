@@ -146,10 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HiredProfessionalsDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="HiredProfessionalsDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>HiredProfessionalsDB.mdf</DependentUpon>
     </Content>
     <Content Include="ProfessionalsDb.mdf">

@@ -34,6 +34,11 @@ namespace cs2_final
                 this.athletesTableAdapter.Insert(athlete.Firstname, athlete.Lastname, athlete.Salary);
                 this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
                 this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
+                //testing to get database to save data
+                this.Validate();
+                this.athletesBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+
             }
             else
             {
@@ -43,12 +48,19 @@ namespace cs2_final
         }
         private void hireProfBtn_Click(object sender, EventArgs e)
         {
-            //edit below this block to move to professionals form if user has selected a athlete from the datagrid
-            //pass the athlete salary and athleteID to the new form
-            var professionalsForm = new ProfessionalsForm(salary);
-            professionalsForm.Closed += (s, args) => this.Close();
-            professionalsForm.Show();
-            this.Hide();
+            SetAthIDandAthSal();
+            if (athID > 0) 
+            {
+                //pass the athlete salary and athleteID to the new form
+                var professionalsForm = new ProfessionalsForm(athID, athSal);
+                professionalsForm.Closed += (s, args) => this.Close();
+                professionalsForm.Show();
+                this.Hide(); 
+            }
+            else
+            {
+                MessageBox.Show("Select an athlete in the table to hire professionals for selected athlete.");
+            }
         }
 
         private void salaryTxt_TextChanged(object sender, EventArgs e)
@@ -64,17 +76,16 @@ namespace cs2_final
             this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
         }
 
-        private void athletesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        int athID;
+        decimal athSal;
+        private void SetAthIDandAthSal()
         {
-            this.Validate();
-            this.athletesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
-
-        }
-        private void bindingNavigatorPositionItem_TextChanged(object sender, EventArgs e)
-        {
-            //TODO:
-            //only enable hire professional button if a athlete is selected
+            //gathers the cell values for athleteID and Salary
+            //will be called by click events for the datagridview to change both vairables to user selection
+            athID = (int)athletesDataGridView.Rows[int.Parse(bindingNavigatorPositionItem.Text) - 1].Cells[0].Value;
+            if (athID < 1) { return; }
+            athSal = (decimal)athletesDataGridView.Rows[int.Parse(bindingNavigatorPositionItem.Text) - 1].Cells[3].Value;
+            athIDLbl.Text = athID.ToString();
         }
     }
 }

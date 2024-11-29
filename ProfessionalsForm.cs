@@ -12,20 +12,27 @@ namespace cs2_final
 {
     public partial class ProfessionalsForm : Form
     {
-        private readonly decimal _athleteSalary;
-        private List<Professional> _professionalList = new List<Professional>();
+        decimal _athleteSalary;
+        int _athID;
+        //dont think we need a list now since we will use datagrid view and database to store info
+        //private List<Professional> _professionalList = new List<Professional>();
 
-        public ProfessionalsForm(decimal athleteSalary)
+        public ProfessionalsForm(int athID, decimal athleteSalary)
         {
             InitializeComponent();
             _athleteSalary = athleteSalary;
+            _athID = athID;
         }
+        //method to set athlete salary and athlete ID
 
         private void AddProfessional()
         {
-            var prof = GetProfessional();
-            if (prof == null) { return; }
-            _professionalList.Add(prof);
+            Professional prof = GetProfessional();
+            //if (prof == null) { return; }
+            //add created professionals object to professionals database and update datagridview
+            this.professionalsTableAdapter.Insert(prof.FirstName, prof.LastName, prof.Category, prof.Payment, _athID);
+            this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
             RefreshPreview();
         }
 
@@ -48,16 +55,32 @@ namespace cs2_final
                 switch (SelectedCategory().Tag.ToString())
                 {
                     case ("lawyer"):
-                        return new Lawyer(name[0], name[1], _athleteSalary);
+                        {
+                            Lawyer prof = new Lawyer(name[0], name[1], _athleteSalary);
+                            return prof;
+                        }
                     case ("asst"):
-                        return new Assistant(name[0], name[1], _athleteSalary);
+                        {
+                            Assistant prof = new Assistant(name[0], name[1], _athleteSalary);
+                            return prof;
+                        }
                     case ("agent"):
-                        return new Agent(name[0], name[1], _athleteSalary);
+                        {
+                            Agent prof = new Agent(name[0], name[1], _athleteSalary);
+                            return prof;
+                        }
+
                     case ("trainer"):
-                        return new Trainer(name[0], name[1], _athleteSalary);
+                        {
+                            Trainer prof = new Trainer(name[0], name[1], _athleteSalary);
+                            return prof;
+                        }
+                           
                     default:
                         return null;
                 }
+
+
             }
             catch (Exception ex)
             {
@@ -78,8 +101,9 @@ namespace cs2_final
         private void ProfessionalsForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed.
-            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
+            //this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
             salaryLbl.Text = _athleteSalary.ToString("C");
+            athIDLbl.Text = _athID.ToString();
         }
 
         private void addBtn_Click(object sender, EventArgs e)

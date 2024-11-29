@@ -143,55 +143,55 @@ SELECT AthleteID, FirstName, LastName, Salary FROM Athletes WHERE (AthleteID = @
   <xs:element name="HiredProfessionalsDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="HiredProfessionalsDBDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HiredProfessionalsDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Professionals" msprop:Generator_RowClassName="ProfessionalsRow" msprop:Generator_RowEvHandlerName="ProfessionalsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfessionalsRowDeleted" msprop:Generator_RowDeletingName="ProfessionalsRowDeleting" msprop:Generator_RowEvArgName="ProfessionalsRowChangeEvent" msprop:Generator_TablePropName="Professionals" msprop:Generator_RowChangedName="ProfessionalsRowChanged" msprop:Generator_UserTableName="Professionals" msprop:Generator_RowChangingName="ProfessionalsRowChanging" msprop:Generator_TableClassName="ProfessionalsDataTable" msprop:Generator_TableVarName="tableProfessionals">
+        <xs:element name="Professionals" msprop:Generator_RowEvHandlerName="ProfessionalsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfessionalsRowDeleted" msprop:Generator_RowDeletingName="ProfessionalsRowDeleting" msprop:Generator_RowEvArgName="ProfessionalsRowChangeEvent" msprop:Generator_TablePropName="Professionals" msprop:Generator_RowChangedName="ProfessionalsRowChanged" msprop:Generator_UserTableName="Professionals" msprop:Generator_RowChangingName="ProfessionalsRowChanging" msprop:Generator_RowClassName="ProfessionalsRow" msprop:Generator_TableClassName="ProfessionalsDataTable" msprop:Generator_TableVarName="tableProfessionals">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
-              <xs:element name="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName">
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnVarNameInTable="columnId" type="xs:int" />
+              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName">
+              <xs:element name="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Profession" msprop:Generator_UserColumnName="Profession" msprop:Generator_ColumnPropNameInTable="ProfessionColumn" msprop:Generator_ColumnPropNameInRow="Profession" msprop:Generator_ColumnVarNameInTable="columnProfession">
+              <xs:element name="Profession" msprop:Generator_ColumnPropNameInTable="ProfessionColumn" msprop:Generator_ColumnPropNameInRow="Profession" msprop:Generator_UserColumnName="Profession" msprop:Generator_ColumnVarNameInTable="columnProfession">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Salary" msprop:Generator_UserColumnName="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnVarNameInTable="columnSalary" type="xs:decimal" />
-              <xs:element name="AthleteID" msprop:Generator_UserColumnName="AthleteID" msprop:Generator_ColumnPropNameInTable="AthleteIDColumn" msprop:Generator_ColumnPropNameInRow="AthleteID" msprop:Generator_ColumnVarNameInTable="columnAthleteID" type="xs:int" />
+              <xs:element name="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_UserColumnName="Salary" msprop:Generator_ColumnVarNameInTable="columnSalary" type="xs:decimal" />
+              <xs:element name="AthleteID" msprop:Generator_ColumnPropNameInTable="AthleteIDColumn" msprop:Generator_ColumnPropNameInRow="AthleteID" msprop:Generator_UserColumnName="AthleteID" msprop:Generator_ColumnVarNameInTable="columnAthleteID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Athletes" msprop:Generator_RowEvHandlerName="AthletesRowChangeEventHandler" msprop:Generator_RowDeletedName="AthletesRowDeleted" msprop:Generator_RowDeletingName="AthletesRowDeleting" msprop:Generator_RowEvArgName="AthletesRowChangeEvent" msprop:Generator_TablePropName="Athletes" msprop:Generator_RowChangedName="AthletesRowChanged" msprop:Generator_RowChangingName="AthletesRowChanging" msprop:Generator_TableClassName="AthletesDataTable" msprop:Generator_RowClassName="AthletesRow" msprop:Generator_TableVarName="tableAthletes" msprop:Generator_UserTableName="Athletes">
+        <xs:element name="Athletes" msprop:Generator_RowClassName="AthletesRow" msprop:Generator_RowEvHandlerName="AthletesRowChangeEventHandler" msprop:Generator_RowDeletedName="AthletesRowDeleted" msprop:Generator_RowDeletingName="AthletesRowDeleting" msprop:Generator_RowEvArgName="AthletesRowChangeEvent" msprop:Generator_TablePropName="Athletes" msprop:Generator_RowChangedName="AthletesRowChanged" msprop:Generator_UserTableName="Athletes" msprop:Generator_RowChangingName="AthletesRowChanging" msprop:Generator_TableClassName="AthletesDataTable" msprop:Generator_TableVarName="tableAthletes">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AthleteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="AthleteID" msprop:Generator_ColumnPropNameInTable="AthleteIDColumn" msprop:Generator_ColumnVarNameInTable="columnAthleteID" msprop:Generator_UserColumnName="AthleteID" type="xs:int" />
-              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+              <xs:element name="AthleteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="AthleteID" msprop:Generator_ColumnPropNameInTable="AthleteIDColumn" msprop:Generator_ColumnPropNameInRow="AthleteID" msprop:Generator_ColumnVarNameInTable="columnAthleteID" type="xs:int" />
+              <xs:element name="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+              <xs:element name="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Salary" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnVarNameInTable="columnSalary" msprop:Generator_UserColumnName="Salary" type="xs:decimal" />
+              <xs:element name="Salary" msprop:Generator_UserColumnName="Salary" msprop:Generator_ColumnPropNameInTable="SalaryColumn" msprop:Generator_ColumnPropNameInRow="Salary" msprop:Generator_ColumnVarNameInTable="columnSalary" type="xs:decimal" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
