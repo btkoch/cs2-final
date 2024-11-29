@@ -74,6 +74,9 @@
     </Compile>
     <Compile Include="Assistant.cs" />
     <Compile Include="Agent.cs" />
+    <Compile Include="HiredProfessionalsDBDataSet.cs">
+      <DependentUpon>HiredProfessionalsDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HiredProfessionalsDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

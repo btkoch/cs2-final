@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.athIDLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.professionalsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +68,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professionalsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.athIDLbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsBindingSource)).BeginInit();
@@ -95,6 +95,25 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Professionals";
+            // 
+            // athIDLbl
+            // 
+            this.athIDLbl.AutoSize = true;
+            this.athIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.athIDLbl.Location = new System.Drawing.Point(90, 345);
+            this.athIDLbl.Name = "athIDLbl";
+            this.athIDLbl.Size = new System.Drawing.Size(50, 16);
+            this.athIDLbl.TabIndex = 17;
+            this.athIDLbl.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 347);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Athlete ID:";
             // 
             // professionalsDataGridView
             // 
@@ -409,25 +428,6 @@
             this.professionalsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.professionalsBindingNavigatorSaveItem.Text = "Save Data";
             this.professionalsBindingNavigatorSaveItem.Click += new System.EventHandler(this.professionalsBindingNavigatorSaveItem_Click);
-            // 
-            // athIDLbl
-            // 
-            this.athIDLbl.AutoSize = true;
-            this.athIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.athIDLbl.Location = new System.Drawing.Point(90, 345);
-            this.athIDLbl.Name = "athIDLbl";
-            this.athIDLbl.Size = new System.Drawing.Size(50, 16);
-            this.athIDLbl.TabIndex = 17;
-            this.athIDLbl.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 347);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Athlete ID:";
             // 
             // ProfessionalsForm
             // 

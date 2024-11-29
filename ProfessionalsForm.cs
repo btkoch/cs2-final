@@ -28,11 +28,13 @@ namespace cs2_final
         private void AddProfessional()
         {
             Professional prof = GetProfessional();
-            //if (prof == null) { return; }
+            if (prof == null) { return; }
             //add created professionals object to professionals database and update datagridview
             this.professionalsTableAdapter.Insert(prof.FirstName, prof.LastName, prof.Category, prof.Payment, _athID);
             this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
-            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
+            //this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
+            //filters out professionals hired by other athletes
+            this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals, _athID);
             RefreshPreview();
         }
 
@@ -100,8 +102,9 @@ namespace cs2_final
 
         private void ProfessionalsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed.
-            //this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
+            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed. 
+            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
+            this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals,_athID);
             salaryLbl.Text = _athleteSalary.ToString("C");
             athIDLbl.Text = _athID.ToString();
         }

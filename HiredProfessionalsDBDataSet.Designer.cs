@@ -232,14 +232,6 @@ namespace cs2_final {
             base.Tables.Add(this.tableProfessionals);
             this.tableAthletes = new AthletesDataTable();
             base.Tables.Add(this.tableAthletes);
-            global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Athletes_Professionals", new global::System.Data.DataColumn[] {
-                        this.tableAthletes.AthleteIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProfessionals.AthleteIDColumn});
-            this.tableProfessionals.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1385,12 +1377,18 @@ SELECT Id, FirstName, LastName, Profession, Salary, AthleteID FROM Professionals
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, FirstName, LastName, Profession, Salary, AthleteID FROM dbo.Profession" +
                 "als";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.SelectAthHiredProfs";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@athID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1412,6 +1410,42 @@ SELECT Id, FirstName, LastName, Profession, Salary, AthleteID FROM Professionals
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual HiredProfessionalsDBDataSet.ProfessionalsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            HiredProfessionalsDBDataSet.ProfessionalsDataTable dataTable = new HiredProfessionalsDBDataSet.ProfessionalsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(HiredProfessionalsDBDataSet.ProfessionalsDataTable dataTable, global::System.Nullable<int> athID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((athID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(athID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual HiredProfessionalsDBDataSet.ProfessionalsDataTable GetDataBy(global::System.Nullable<int> athID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((athID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(athID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             HiredProfessionalsDBDataSet.ProfessionalsDataTable dataTable = new HiredProfessionalsDBDataSet.ProfessionalsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2084,21 +2118,21 @@ SELECT AthleteID, FirstName, LastName, Salary FROM Athletes WHERE (AthleteID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(HiredProfessionalsDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._athletesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Athletes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._athletesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._professionalsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Professionals.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._professionalsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._athletesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Athletes.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._athletesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2112,19 +2146,19 @@ SELECT AthleteID, FirstName, LastName, Salary FROM Athletes WHERE (AthleteID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(HiredProfessionalsDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._athletesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Athletes.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._athletesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._professionalsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Professionals.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._professionalsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._athletesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Athletes.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._athletesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2138,19 +2172,19 @@ SELECT AthleteID, FirstName, LastName, Salary FROM Athletes WHERE (AthleteID = @
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(HiredProfessionalsDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._professionalsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Professionals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._professionalsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._athletesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Athletes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._athletesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._professionalsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Professionals.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._professionalsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
