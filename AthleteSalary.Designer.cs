@@ -61,7 +61,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.athIDLbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).BeginInit();
@@ -344,23 +343,12 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // athIDLbl
-            // 
-            this.athIDLbl.AutoSize = true;
-            this.athIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.athIDLbl.Location = new System.Drawing.Point(412, 131);
-            this.athIDLbl.Name = "athIDLbl";
-            this.athIDLbl.Size = new System.Drawing.Size(46, 18);
-            this.athIDLbl.TabIndex = 3;
-            this.athIDLbl.Text = "label4";
-            // 
             // AthleteSalary
             // 
             this.AcceptButton = this.submitBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 344);
-            this.Controls.Add(this.athIDLbl);
             this.Controls.Add(this.athletesDataGridView);
             this.Controls.Add(this.athletesBindingNavigator);
             this.Controls.Add(this.groupBox1);
@@ -413,6 +401,5 @@
         private System.Windows.Forms.TextBox athLstnameTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button hireProfBtn;
-        private System.Windows.Forms.Label athIDLbl;
     }
 }

@@ -81,11 +81,11 @@ namespace cs2_final
         private void SetAthIDandAthSal()
         {
             //gathers the cell values for athleteID and Salary
-            //will be called by click events for the datagridview to change both vairables to user selection
+            //uses the binding navigator text box to get current row and sets athID & athSal values.
             athID = (int)athletesDataGridView.Rows[int.Parse(bindingNavigatorPositionItem.Text) - 1].Cells[0].Value;
             if (athID < 1) { return; }
             athSal = (decimal)athletesDataGridView.Rows[int.Parse(bindingNavigatorPositionItem.Text) - 1].Cells[3].Value;
-            athIDLbl.Text = athID.ToString();
+            
         }
     }
 }
