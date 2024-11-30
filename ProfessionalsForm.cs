@@ -83,10 +83,26 @@ namespace cs2_final
         // Updates count of each prof type, total expenditures, and athlete's remaining salary
         private void UpdatePreviewData()
         {
+            // Counts by type:
             lawyerCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Lawyer").ToString();
             asstCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Personal Assistant").ToString();
             agentCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Agent").ToString();
             trainerCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Trainer").ToString();
+
+            // Total expenses:
+            decimal totalExpenses = 0;
+            try
+            {
+                totalExpenses = (decimal)this.professionalsTableAdapter.SumSalaries(_athID);
+            }
+            catch
+            {
+            }
+            totalSpentLbl.Text = totalExpenses.ToString("C");
+
+            // Remaining salary:
+            remainingLbl.Text = (_athleteSalary - totalExpenses).ToString("C");
+
         }
 
         private RadioButton SelectedCategory()
