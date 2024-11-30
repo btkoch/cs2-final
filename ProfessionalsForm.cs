@@ -38,7 +38,7 @@ namespace cs2_final
             try
             {
                 string[] name = nameTxt.Text.Trim().Split(' ');
-                if (name.Length > 2)
+                if (name.Length != 2)
                 {
                     MessageBox.Show("Enter first and last name only, or check for and remove double spaces", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return null;
