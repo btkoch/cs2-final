@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AthleteSalary));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.hireProfBtn = new System.Windows.Forms.Button();
             this.athFirstnameTxt = new System.Windows.Forms.TextBox();
@@ -39,10 +40,6 @@
             this.submitBtn = new System.Windows.Forms.Button();
             this.salaryTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.hiredProfessionalsDBDataSet = new cs2_final.HiredProfessionalsDBDataSet();
-            this.athletesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.athletesTableAdapter = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.AthletesTableAdapter();
-            this.tableAdapterManager = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager();
             this.athletesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -57,16 +54,20 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.athletesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.athletesDataGridView = new System.Windows.Forms.DataGridView();
+            this.athletesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hiredProfessionalsDBDataSet = new cs2_final.HiredProfessionalsDBDataSet();
+            this.athletesTableAdapter = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.AthletesTableAdapter();
+            this.tableAdapterManager = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingNavigator)).BeginInit();
             this.athletesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.athletesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -156,27 +157,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter the athlete\'s yearly salary: $";
             // 
-            // hiredProfessionalsDBDataSet
-            // 
-            this.hiredProfessionalsDBDataSet.DataSetName = "HiredProfessionalsDBDataSet";
-            this.hiredProfessionalsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // athletesBindingSource
-            // 
-            this.athletesBindingSource.DataMember = "Athletes";
-            this.athletesBindingSource.DataSource = this.hiredProfessionalsDBDataSet;
-            // 
-            // athletesTableAdapter
-            // 
-            this.athletesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AthletesTableAdapter = this.athletesTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProfessionalsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // athletesBindingNavigator
             // 
             this.athletesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -210,6 +190,7 @@
             // bindingNavigatorAddNewItem
             // 
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Enabled = false;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
@@ -226,6 +207,7 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Enabled = false;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
@@ -314,9 +296,31 @@
             this.athletesDataGridView.Location = new System.Drawing.Point(12, 177);
             this.athletesDataGridView.MultiSelect = false;
             this.athletesDataGridView.Name = "athletesDataGridView";
+            this.athletesDataGridView.ReadOnly = true;
             this.athletesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.athletesDataGridView.Size = new System.Drawing.Size(446, 144);
             this.athletesDataGridView.TabIndex = 2;
+            // 
+            // athletesBindingSource
+            // 
+            this.athletesBindingSource.DataMember = "Athletes";
+            this.athletesBindingSource.DataSource = this.hiredProfessionalsDBDataSet;
+            // 
+            // hiredProfessionalsDBDataSet
+            // 
+            this.hiredProfessionalsDBDataSet.DataSetName = "HiredProfessionalsDBDataSet";
+            this.hiredProfessionalsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // athletesTableAdapter
+            // 
+            this.athletesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AthletesTableAdapter = this.athletesTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ProfessionalsTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -330,18 +334,24 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "FirstName";
             this.dataGridViewTextBoxColumn2.HeaderText = "FirstName";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "LastName";
             this.dataGridViewTextBoxColumn3.HeaderText = "LastName";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Salary";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn4.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // AthleteSalary
             // 
@@ -357,12 +367,12 @@
             this.Load += new System.EventHandler(this.AthleteSalary_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingNavigator)).EndInit();
             this.athletesBindingNavigator.ResumeLayout(false);
             this.athletesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.athletesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,14 +402,14 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton athletesBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView athletesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.TextBox athFirstnameTxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox athLstnameTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button hireProfBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
