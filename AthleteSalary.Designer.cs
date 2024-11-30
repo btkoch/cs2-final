@@ -42,6 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.athletesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.athletesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hiredProfessionalsDBDataSet = new cs2_final.HiredProfessionalsDBDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -54,20 +56,18 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.athletesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.athletesDataGridView = new System.Windows.Forms.DataGridView();
-            this.athletesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hiredProfessionalsDBDataSet = new cs2_final.HiredProfessionalsDBDataSet();
-            this.athletesTableAdapter = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.AthletesTableAdapter();
-            this.tableAdapterManager = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.athletesTableAdapter = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.AthletesTableAdapter();
+            this.tableAdapterManager = new cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingNavigator)).BeginInit();
             this.athletesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.athletesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.athletesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -197,6 +197,16 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
+            // athletesBindingSource
+            // 
+            this.athletesBindingSource.DataMember = "Athletes";
+            this.athletesBindingSource.DataSource = this.hiredProfessionalsDBDataSet;
+            // 
+            // hiredProfessionalsDBDataSet
+            // 
+            this.hiredProfessionalsDBDataSet.DataSetName = "HiredProfessionalsDBDataSet";
+            this.hiredProfessionalsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -207,7 +217,6 @@
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Enabled = false;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
@@ -301,27 +310,6 @@
             this.athletesDataGridView.Size = new System.Drawing.Size(446, 144);
             this.athletesDataGridView.TabIndex = 2;
             // 
-            // athletesBindingSource
-            // 
-            this.athletesBindingSource.DataMember = "Athletes";
-            this.athletesBindingSource.DataSource = this.hiredProfessionalsDBDataSet;
-            // 
-            // hiredProfessionalsDBDataSet
-            // 
-            this.hiredProfessionalsDBDataSet.DataSetName = "HiredProfessionalsDBDataSet";
-            this.hiredProfessionalsDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // athletesTableAdapter
-            // 
-            this.athletesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AthletesTableAdapter = this.athletesTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ProfessionalsTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "AthleteID";
@@ -353,6 +341,17 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // athletesTableAdapter
+            // 
+            this.athletesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AthletesTableAdapter = this.athletesTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.ProfessionalsTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = cs2_final.HiredProfessionalsDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // AthleteSalary
             // 
             this.AcceptButton = this.submitBtn;
@@ -370,9 +369,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingNavigator)).EndInit();
             this.athletesBindingNavigator.ResumeLayout(false);
             this.athletesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.athletesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.athletesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hiredProfessionalsDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.athletesDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

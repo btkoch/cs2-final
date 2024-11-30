@@ -59,7 +59,7 @@ namespace cs2_final
             }
             else
             {
-                MessageBox.Show("Select an athlete in the table to hire professionals for selected athlete.");
+                return;
             }
         }
 
@@ -81,11 +81,17 @@ namespace cs2_final
         private void SetAthIDandAthSal()
         {
             //gathers the cell values for athleteID and Salary
-            //uses the binding navigator text box to get current row and sets athID & athSal values.
-            athID = (int)athletesDataGridView.Rows[int.Parse(bindingNavigatorPositionItem.Text) - 1].Cells[0].Value;
-            if (athID < 1) { return; }
-            athSal = (decimal)athletesDataGridView.Rows[int.Parse(bindingNavigatorPositionItem.Text) - 1].Cells[3].Value;
-            
+            int row = int.Parse(bindingNavigatorPositionItem.Text) - 1;
+            if (row >= 0)
+            {
+                //uses the binding navigator text box to get current row and sets athID & athSal values.
+                athID = (int)athletesDataGridView.Rows[row].Cells[0].Value;
+                athSal = (decimal)athletesDataGridView.Rows[row].Cells[3].Value;
+            }
+            else
+            {
+                MessageBox.Show("Select an athlete to hire professionals for");
+            }
         }
     }
 }
