@@ -100,7 +100,11 @@ namespace cs2_final
         private void addBtn_Click(object sender, EventArgs e)
         {
             // Only continue if a category is selected
-            if (SelectedCategory() == null) return;
+            if (SelectedCategory() == null)
+            {
+                MessageBox.Show("Select a category to continue",this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             AddProfessional();
         }
