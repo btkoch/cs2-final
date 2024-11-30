@@ -91,12 +91,9 @@ namespace cs2_final
 
             // Total expenses:
             decimal totalExpenses = 0;
-            try
+            if (this.professionalsDataGridView.Rows[0].Cells[0].Value != null)
             {
                 totalExpenses = (decimal)this.professionalsTableAdapter.SumSalaries(_athID);
-            }
-            catch
-            {
             }
             totalSpentLbl.Text = totalExpenses.ToString("C");
 
