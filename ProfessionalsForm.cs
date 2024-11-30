@@ -14,17 +14,14 @@ namespace cs2_final
     {
         decimal _athleteSalary;
         int _athID;
-        //dont think we need a list now since we will use datagrid view and database to store info
-        //private List<Professional> _professionalList = new List<Professional>();
 
         public ProfessionalsForm(int athID, decimal athleteSalary)
         {
+            //set athlete salary and athlete ID
             InitializeComponent();
             _athleteSalary = athleteSalary;
             _athID = athID;
         }
-        //method to set athlete salary and athlete ID
-
         private void AddProfessional()
         {
             Professional prof = GetProfessional();
@@ -35,14 +32,7 @@ namespace cs2_final
             //this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
             //filters out professionals hired by other athletes
             this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals, _athID);
-            RefreshPreview();
         }
-
-        private void RefreshPreview()
-        {
-            //add code to update professionals table
-        }
-
         private Professional GetProfessional()
         {
             try
@@ -81,8 +71,6 @@ namespace cs2_final
                     default:
                         return null;
                 }
-
-
             }
             catch (Exception ex)
             {
