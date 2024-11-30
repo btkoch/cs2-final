@@ -133,11 +133,6 @@ namespace cs2_final
             AddProfessional();
         }
 
-        private void removeBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void professionalsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();

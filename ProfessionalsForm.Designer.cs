@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.remainingLbl = new System.Windows.Forms.Label();
@@ -225,6 +225,7 @@
             this.professionalsDataGridView.ReadOnly = true;
             this.professionalsDataGridView.Size = new System.Drawing.Size(550, 344);
             this.professionalsDataGridView.TabIndex = 15;
+            this.professionalsDataGridView.TabStop = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -257,9 +258,9 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Salary";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn5.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -283,7 +284,8 @@
             this.categoryPnl.Location = new System.Drawing.Point(9, 45);
             this.categoryPnl.Name = "categoryPnl";
             this.categoryPnl.Size = new System.Drawing.Size(120, 94);
-            this.categoryPnl.TabIndex = 15;
+            this.categoryPnl.TabIndex = 1;
+            this.categoryPnl.TabStop = true;
             // 
             // lawyerBtn
             // 
@@ -291,7 +293,7 @@
             this.lawyerBtn.Location = new System.Drawing.Point(3, 3);
             this.lawyerBtn.Name = "lawyerBtn";
             this.lawyerBtn.Size = new System.Drawing.Size(59, 17);
-            this.lawyerBtn.TabIndex = 5;
+            this.lawyerBtn.TabIndex = 2;
             this.lawyerBtn.TabStop = true;
             this.lawyerBtn.Tag = "lawyer";
             this.lawyerBtn.Text = "&Lawyer";
@@ -303,7 +305,7 @@
             this.asstBtn.Location = new System.Drawing.Point(3, 26);
             this.asstBtn.Name = "asstBtn";
             this.asstBtn.Size = new System.Drawing.Size(111, 17);
-            this.asstBtn.TabIndex = 8;
+            this.asstBtn.TabIndex = 3;
             this.asstBtn.TabStop = true;
             this.asstBtn.Tag = "asst";
             this.asstBtn.Text = "&Personal Assistant";
@@ -315,7 +317,7 @@
             this.agentBtn.Location = new System.Drawing.Point(3, 49);
             this.agentBtn.Name = "agentBtn";
             this.agentBtn.Size = new System.Drawing.Size(53, 17);
-            this.agentBtn.TabIndex = 9;
+            this.agentBtn.TabIndex = 4;
             this.agentBtn.TabStop = true;
             this.agentBtn.Tag = "agent";
             this.agentBtn.Text = "A&gent";
@@ -327,7 +329,7 @@
             this.trainerBtn.Location = new System.Drawing.Point(3, 72);
             this.trainerBtn.Name = "trainerBtn";
             this.trainerBtn.Size = new System.Drawing.Size(58, 17);
-            this.trainerBtn.TabIndex = 10;
+            this.trainerBtn.TabIndex = 5;
             this.trainerBtn.TabStop = true;
             this.trainerBtn.Tag = "trainer";
             this.trainerBtn.Text = "&Trainer";
@@ -357,7 +359,7 @@
             this.addBtn.Location = new System.Drawing.Point(9, 145);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
-            this.addBtn.TabIndex = 11;
+            this.addBtn.TabIndex = 6;
             this.addBtn.Text = "&Add";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
@@ -376,7 +378,7 @@
             this.nameTxt.Location = new System.Drawing.Point(50, 19);
             this.nameTxt.Name = "nameTxt";
             this.nameTxt.Size = new System.Drawing.Size(219, 20);
-            this.nameTxt.TabIndex = 6;
+            this.nameTxt.TabIndex = 0;
             // 
             // professionalsTableAdapter
             // 
@@ -520,7 +522,7 @@
             this.backBtn.Location = new System.Drawing.Point(6, 376);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(75, 23);
-            this.backBtn.TabIndex = 26;
+            this.backBtn.TabIndex = 7;
             this.backBtn.Text = "&Back";
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
