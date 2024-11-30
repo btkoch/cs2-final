@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.remainingLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.trainerCountLbl = new System.Windows.Forms.Label();
             this.agentCountLbl = new System.Windows.Forms.Label();
             this.asstCountLbl = new System.Windows.Forms.Label();
@@ -73,8 +75,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professionalsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.remainingLbl = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsBindingSource)).BeginInit();
@@ -109,6 +109,25 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Professionals";
+            // 
+            // remainingLbl
+            // 
+            this.remainingLbl.AutoSize = true;
+            this.remainingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remainingLbl.Location = new System.Drawing.Point(742, 371);
+            this.remainingLbl.Name = "remainingLbl";
+            this.remainingLbl.Size = new System.Drawing.Size(75, 16);
+            this.remainingLbl.TabIndex = 25;
+            this.remainingLbl.Text = "remaining";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(644, 373);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Remaining Salary:";
             // 
             // trainerCountLbl
             // 
@@ -154,7 +173,7 @@
             // 
             this.totalSpentLbl.AutoSize = true;
             this.totalSpentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSpentLbl.Location = new System.Drawing.Point(357, 372);
+            this.totalSpentLbl.Location = new System.Drawing.Point(346, 373);
             this.totalSpentLbl.Name = "totalSpentLbl";
             this.totalSpentLbl.Size = new System.Drawing.Size(65, 13);
             this.totalSpentLbl.TabIndex = 19;
@@ -163,7 +182,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 372);
+            this.label3.Location = new System.Drawing.Point(272, 373);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 18;
@@ -493,25 +512,6 @@
             this.professionalsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.professionalsBindingNavigatorSaveItem.Text = "Save Data";
             this.professionalsBindingNavigatorSaveItem.Click += new System.EventHandler(this.professionalsBindingNavigatorSaveItem_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(428, 372);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 13);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Remaining Salary:";
-            // 
-            // remainingLbl
-            // 
-            this.remainingLbl.AutoSize = true;
-            this.remainingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainingLbl.Location = new System.Drawing.Point(526, 370);
-            this.remainingLbl.Name = "remainingLbl";
-            this.remainingLbl.Size = new System.Drawing.Size(75, 16);
-            this.remainingLbl.TabIndex = 25;
-            this.remainingLbl.Text = "remaining";
             // 
             // ProfessionalsForm
             // 
