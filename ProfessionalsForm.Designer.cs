@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.athIDLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.professionalsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.professionalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hiredProfessionalsDBDataSet = new cs2_final.HiredProfessionalsDBDataSet();
             this.categoryPnl = new System.Windows.Forms.Panel();
@@ -42,7 +47,6 @@
             this.asstBtn = new System.Windows.Forms.RadioButton();
             this.agentBtn = new System.Windows.Forms.RadioButton();
             this.trainerBtn = new System.Windows.Forms.RadioButton();
-            this.removeBtn = new System.Windows.Forms.Button();
             this.salaryLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.addBtn = new System.Windows.Forms.Button();
@@ -63,11 +67,8 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professionalsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.totalSpentLbl = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsBindingSource)).BeginInit();
@@ -79,11 +80,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.totalSpentLbl);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.athIDLbl);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.professionalsDataGridView);
             this.groupBox2.Controls.Add(this.categoryPnl);
-            this.groupBox2.Controls.Add(this.removeBtn);
             this.groupBox2.Controls.Add(this.salaryLbl);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.addBtn);
@@ -91,7 +93,7 @@
             this.groupBox2.Controls.Add(this.nameTxt);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(825, 405);
+            this.groupBox2.Size = new System.Drawing.Size(852, 405);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Professionals";
@@ -129,8 +131,46 @@
             this.professionalsDataGridView.Location = new System.Drawing.Point(275, 16);
             this.professionalsDataGridView.Name = "professionalsDataGridView";
             this.professionalsDataGridView.ReadOnly = true;
-            this.professionalsDataGridView.Size = new System.Drawing.Size(636, 344);
+            this.professionalsDataGridView.Size = new System.Drawing.Size(550, 344);
             this.professionalsDataGridView.TabIndex = 15;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Profession";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Profession";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Salary";
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Salary";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // professionalsBindingSource
             // 
@@ -200,16 +240,6 @@
             this.trainerBtn.Tag = "trainer";
             this.trainerBtn.Text = "&Trainer";
             this.trainerBtn.UseVisualStyleBackColor = true;
-            // 
-            // removeBtn
-            // 
-            this.removeBtn.Location = new System.Drawing.Point(416, 366);
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(127, 23);
-            this.removeBtn.TabIndex = 14;
-            this.removeBtn.Text = "&Remove Selected";
-            this.removeBtn.UseVisualStyleBackColor = true;
-            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // salaryLbl
             // 
@@ -293,7 +323,7 @@
             this.professionalsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.professionalsBindingNavigator.Name = "professionalsBindingNavigator";
             this.professionalsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.professionalsBindingNavigator.Size = new System.Drawing.Size(847, 25);
+            this.professionalsBindingNavigator.Size = new System.Drawing.Size(876, 25);
             this.professionalsBindingNavigator.TabIndex = 4;
             this.professionalsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -393,49 +423,30 @@
             this.professionalsBindingNavigatorSaveItem.Text = "Save Data";
             this.professionalsBindingNavigatorSaveItem.Click += new System.EventHandler(this.professionalsBindingNavigatorSaveItem_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // label3
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(283, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Total Spent: ";
             // 
-            // dataGridViewTextBoxColumn2
+            // totalSpentLbl
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "FirstName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "FirstName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "LastName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "LastName";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Profession";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Profession";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Salary";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Salary";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.totalSpentLbl.AutoSize = true;
+            this.totalSpentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalSpentLbl.Location = new System.Drawing.Point(357, 372);
+            this.totalSpentLbl.Name = "totalSpentLbl";
+            this.totalSpentLbl.Size = new System.Drawing.Size(41, 13);
+            this.totalSpentLbl.TabIndex = 19;
+            this.totalSpentLbl.Text = "label5";
             // 
             // ProfessionalsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 430);
+            this.ClientSize = new System.Drawing.Size(876, 430);
             this.Controls.Add(this.professionalsBindingNavigator);
             this.Controls.Add(this.groupBox2);
             this.Name = "ProfessionalsForm";
@@ -465,7 +476,6 @@
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.RadioButton lawyerBtn;
         private System.Windows.Forms.Button addBtn;
-        private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Label salaryLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel categoryPnl;
@@ -494,6 +504,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label totalSpentLbl;
+        private System.Windows.Forms.Label label3;
     }
 }
 
