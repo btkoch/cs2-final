@@ -67,11 +67,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Athlete.cs" />
-    <Compile Include="athleteDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>athleteDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Assistant.cs" />
     <Compile Include="Agent.cs" />
     <Compile Include="HiredProfessionalsDBDataSet.cs">
@@ -114,17 +109,6 @@
     <EmbeddedResource Include="AthleteSalary.resx">
       <DependentUpon>AthleteSalary.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="athleteDataSet.xsc">
-      <DependentUpon>athleteDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="athleteDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>athleteDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="athleteDataSet.xss">
-      <DependentUpon>athleteDataSet.xsd</DependentUpon>
-    </None>
     <None Include="HiredProfessionalsDBDataSet.xsc">
       <DependentUpon>HiredProfessionalsDBDataSet.xsd</DependentUpon>
     </None>
