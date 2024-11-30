@@ -32,6 +32,7 @@ namespace cs2_final
             //this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
             //filters out professionals hired by other athletes
             this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals, _athID);
+            UpdatePreviewData();
         }
         private Professional GetProfessional()
         {
@@ -79,6 +80,15 @@ namespace cs2_final
             }
         }
 
+        // Updates count of each prof type, total expenditures, and athlete's remaining salary
+        private void UpdatePreviewData()
+        {
+            lawyerCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Lawyer").ToString();
+            asstCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Personal Assistant").ToString();
+            agentCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Agent").ToString();
+            trainerCountLbl.Text = this.professionalsTableAdapter.CountProfessional(_athID, "Trainer").ToString();
+        }
+
         private RadioButton SelectedCategory()
         {
             foreach (RadioButton rb in categoryPnl.Controls)
@@ -95,6 +105,7 @@ namespace cs2_final
             this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals,_athID);
             salaryLbl.Text = _athleteSalary.ToString("C");
             athIDLbl.Text = _athID.ToString();
+            UpdatePreviewData();
         }
 
         private void addBtn_Click(object sender, EventArgs e)
