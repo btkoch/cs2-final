@@ -145,5 +145,12 @@ namespace cs2_final
             this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
 
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            AthleteSalary athleteSalary = new AthleteSalary();
+            athleteSalary.Show();
+            this.Hide();
+        }
     }
 }

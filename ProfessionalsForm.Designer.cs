@@ -75,6 +75,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professionalsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.backBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsBindingSource)).BeginInit();
@@ -86,6 +87,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.backBtn);
             this.groupBox2.Controls.Add(this.remainingLbl);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.trainerCountLbl);
@@ -513,6 +515,16 @@
             this.professionalsBindingNavigatorSaveItem.Text = "Save Data";
             this.professionalsBindingNavigatorSaveItem.Click += new System.EventHandler(this.professionalsBindingNavigatorSaveItem_Click);
             // 
+            // backBtn
+            // 
+            this.backBtn.Location = new System.Drawing.Point(6, 376);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 26;
+            this.backBtn.Text = "&Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // ProfessionalsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,6 +595,7 @@
         private System.Windows.Forms.Label lawyerCountLbl;
         private System.Windows.Forms.Label remainingLbl;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button backBtn;
     }
 }
 
