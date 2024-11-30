@@ -32,6 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.trainerCountLbl = new System.Windows.Forms.Label();
+            this.agentCountLbl = new System.Windows.Forms.Label();
+            this.asstCountLbl = new System.Windows.Forms.Label();
+            this.lawyerCountLbl = new System.Windows.Forms.Label();
             this.totalSpentLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.athIDLbl = new System.Windows.Forms.Label();
@@ -69,10 +73,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professionalsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.lawyerCountLbl = new System.Windows.Forms.Label();
-            this.asstCountLbl = new System.Windows.Forms.Label();
-            this.agentCountLbl = new System.Windows.Forms.Label();
-            this.trainerCountLbl = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsBindingSource)).BeginInit();
@@ -101,10 +101,50 @@
             this.groupBox2.Controls.Add(this.nameTxt);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(852, 405);
+            this.groupBox2.Size = new System.Drawing.Size(852, 406);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Professionals";
+            // 
+            // trainerCountLbl
+            // 
+            this.trainerCountLbl.AutoSize = true;
+            this.trainerCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trainerCountLbl.Location = new System.Drawing.Point(135, 117);
+            this.trainerCountLbl.Name = "trainerCountLbl";
+            this.trainerCountLbl.Size = new System.Drawing.Size(90, 16);
+            this.trainerCountLbl.TabIndex = 23;
+            this.trainerCountLbl.Text = "trainerCount";
+            // 
+            // agentCountLbl
+            // 
+            this.agentCountLbl.AutoSize = true;
+            this.agentCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agentCountLbl.Location = new System.Drawing.Point(135, 95);
+            this.agentCountLbl.Name = "agentCountLbl";
+            this.agentCountLbl.Size = new System.Drawing.Size(85, 16);
+            this.agentCountLbl.TabIndex = 22;
+            this.agentCountLbl.Text = "agentCount";
+            // 
+            // asstCountLbl
+            // 
+            this.asstCountLbl.AutoSize = true;
+            this.asstCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asstCountLbl.Location = new System.Drawing.Point(135, 72);
+            this.asstCountLbl.Name = "asstCountLbl";
+            this.asstCountLbl.Size = new System.Drawing.Size(87, 16);
+            this.asstCountLbl.TabIndex = 21;
+            this.asstCountLbl.Text = "assistCount";
+            // 
+            // lawyerCountLbl
+            // 
+            this.lawyerCountLbl.AutoSize = true;
+            this.lawyerCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lawyerCountLbl.Location = new System.Drawing.Point(135, 48);
+            this.lawyerCountLbl.Name = "lawyerCountLbl";
+            this.lawyerCountLbl.Size = new System.Drawing.Size(91, 16);
+            this.lawyerCountLbl.TabIndex = 20;
+            this.lawyerCountLbl.Text = "lawyerCount";
             // 
             // totalSpentLbl
             // 
@@ -449,46 +489,6 @@
             this.professionalsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.professionalsBindingNavigatorSaveItem.Text = "Save Data";
             this.professionalsBindingNavigatorSaveItem.Click += new System.EventHandler(this.professionalsBindingNavigatorSaveItem_Click);
-            // 
-            // lawyerCountLbl
-            // 
-            this.lawyerCountLbl.AutoSize = true;
-            this.lawyerCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lawyerCountLbl.Location = new System.Drawing.Point(135, 48);
-            this.lawyerCountLbl.Name = "lawyerCountLbl";
-            this.lawyerCountLbl.Size = new System.Drawing.Size(91, 16);
-            this.lawyerCountLbl.TabIndex = 20;
-            this.lawyerCountLbl.Text = "lawyerCount";
-            // 
-            // asstCountLbl
-            // 
-            this.asstCountLbl.AutoSize = true;
-            this.asstCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asstCountLbl.Location = new System.Drawing.Point(135, 72);
-            this.asstCountLbl.Name = "asstCountLbl";
-            this.asstCountLbl.Size = new System.Drawing.Size(87, 16);
-            this.asstCountLbl.TabIndex = 21;
-            this.asstCountLbl.Text = "assistCount";
-            // 
-            // agentCountLbl
-            // 
-            this.agentCountLbl.AutoSize = true;
-            this.agentCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agentCountLbl.Location = new System.Drawing.Point(135, 95);
-            this.agentCountLbl.Name = "agentCountLbl";
-            this.agentCountLbl.Size = new System.Drawing.Size(85, 16);
-            this.agentCountLbl.TabIndex = 22;
-            this.agentCountLbl.Text = "agentCount";
-            // 
-            // trainerCountLbl
-            // 
-            this.trainerCountLbl.AutoSize = true;
-            this.trainerCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trainerCountLbl.Location = new System.Drawing.Point(135, 117);
-            this.trainerCountLbl.Name = "trainerCountLbl";
-            this.trainerCountLbl.Size = new System.Drawing.Size(90, 16);
-            this.trainerCountLbl.TabIndex = 23;
-            this.trainerCountLbl.Text = "trainerCount";
             // 
             // ProfessionalsForm
             // 
