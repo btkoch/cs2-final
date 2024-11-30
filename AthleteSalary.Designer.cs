@@ -92,7 +92,7 @@
             this.hireProfBtn.Location = new System.Drawing.Point(25, 119);
             this.hireProfBtn.Name = "hireProfBtn";
             this.hireProfBtn.Size = new System.Drawing.Size(102, 23);
-            this.hireProfBtn.TabIndex = 7;
+            this.hireProfBtn.TabIndex = 5;
             this.hireProfBtn.Text = "Hire Professionals";
             this.hireProfBtn.UseVisualStyleBackColor = true;
             this.hireProfBtn.Click += new System.EventHandler(this.hireProfBtn_Click);
@@ -102,7 +102,7 @@
             this.athFirstnameTxt.Location = new System.Drawing.Point(100, 16);
             this.athFirstnameTxt.Name = "athFirstnameTxt";
             this.athFirstnameTxt.Size = new System.Drawing.Size(169, 20);
-            this.athFirstnameTxt.TabIndex = 6;
+            this.athFirstnameTxt.TabIndex = 1;
             // 
             // label3
             // 
@@ -118,7 +118,7 @@
             this.athLstnameTxt.Location = new System.Drawing.Point(100, 42);
             this.athLstnameTxt.Name = "athLstnameTxt";
             this.athLstnameTxt.Size = new System.Drawing.Size(169, 20);
-            this.athLstnameTxt.TabIndex = 4;
+            this.athLstnameTxt.TabIndex = 2;
             // 
             // label2
             // 
@@ -135,7 +135,7 @@
             this.submitBtn.Location = new System.Drawing.Point(148, 119);
             this.submitBtn.Name = "submitBtn";
             this.submitBtn.Size = new System.Drawing.Size(102, 23);
-            this.submitBtn.TabIndex = 2;
+            this.submitBtn.TabIndex = 4;
             this.submitBtn.Text = "Add Athlete";
             this.submitBtn.UseVisualStyleBackColor = true;
             this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
@@ -145,7 +145,7 @@
             this.salaryTxt.Location = new System.Drawing.Point(169, 68);
             this.salaryTxt.Name = "salaryTxt";
             this.salaryTxt.Size = new System.Drawing.Size(100, 20);
-            this.salaryTxt.TabIndex = 1;
+            this.salaryTxt.TabIndex = 3;
             this.salaryTxt.TextChanged += new System.EventHandler(this.salaryTxt_TextChanged);
             // 
             // label1
@@ -309,6 +309,7 @@
             this.athletesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.athletesDataGridView.Size = new System.Drawing.Size(446, 144);
             this.athletesDataGridView.TabIndex = 2;
+            this.athletesDataGridView.TabStop = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
