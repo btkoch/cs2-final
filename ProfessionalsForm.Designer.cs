@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.totalSpentLbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.athIDLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.professionalsDataGridView = new System.Windows.Forms.DataGridView();
@@ -67,8 +69,10 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.professionalsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.totalSpentLbl = new System.Windows.Forms.Label();
+            this.lawyerCountLbl = new System.Windows.Forms.Label();
+            this.asstCountLbl = new System.Windows.Forms.Label();
+            this.agentCountLbl = new System.Windows.Forms.Label();
+            this.trainerCountLbl = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.professionalsBindingSource)).BeginInit();
@@ -80,6 +84,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.trainerCountLbl);
+            this.groupBox2.Controls.Add(this.agentCountLbl);
+            this.groupBox2.Controls.Add(this.asstCountLbl);
+            this.groupBox2.Controls.Add(this.lawyerCountLbl);
             this.groupBox2.Controls.Add(this.totalSpentLbl);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.athIDLbl);
@@ -98,15 +106,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Professionals";
             // 
+            // totalSpentLbl
+            // 
+            this.totalSpentLbl.AutoSize = true;
+            this.totalSpentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalSpentLbl.Location = new System.Drawing.Point(357, 372);
+            this.totalSpentLbl.Name = "totalSpentLbl";
+            this.totalSpentLbl.Size = new System.Drawing.Size(65, 13);
+            this.totalSpentLbl.TabIndex = 19;
+            this.totalSpentLbl.Text = "totalSpent";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(283, 372);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Total Spent: ";
+            // 
             // athIDLbl
             // 
             this.athIDLbl.AutoSize = true;
             this.athIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.athIDLbl.Location = new System.Drawing.Point(90, 345);
             this.athIDLbl.Name = "athIDLbl";
-            this.athIDLbl.Size = new System.Drawing.Size(50, 16);
+            this.athIDLbl.Size = new System.Drawing.Size(43, 16);
             this.athIDLbl.TabIndex = 17;
-            this.athIDLbl.Text = "label3";
+            this.athIDLbl.Text = "athID";
             // 
             // label4
             // 
@@ -249,7 +276,7 @@
             this.salaryLbl.Name = "salaryLbl";
             this.salaryLbl.Size = new System.Drawing.Size(50, 16);
             this.salaryLbl.TabIndex = 13;
-            this.salaryLbl.Text = "label3";
+            this.salaryLbl.Text = "salary";
             // 
             // label1
             // 
@@ -423,24 +450,45 @@
             this.professionalsBindingNavigatorSaveItem.Text = "Save Data";
             this.professionalsBindingNavigatorSaveItem.Click += new System.EventHandler(this.professionalsBindingNavigatorSaveItem_Click);
             // 
-            // label3
+            // lawyerCountLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 372);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Total Spent: ";
+            this.lawyerCountLbl.AutoSize = true;
+            this.lawyerCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lawyerCountLbl.Location = new System.Drawing.Point(135, 48);
+            this.lawyerCountLbl.Name = "lawyerCountLbl";
+            this.lawyerCountLbl.Size = new System.Drawing.Size(91, 16);
+            this.lawyerCountLbl.TabIndex = 20;
+            this.lawyerCountLbl.Text = "lawyerCount";
             // 
-            // totalSpentLbl
+            // asstCountLbl
             // 
-            this.totalSpentLbl.AutoSize = true;
-            this.totalSpentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSpentLbl.Location = new System.Drawing.Point(357, 372);
-            this.totalSpentLbl.Name = "totalSpentLbl";
-            this.totalSpentLbl.Size = new System.Drawing.Size(41, 13);
-            this.totalSpentLbl.TabIndex = 19;
-            this.totalSpentLbl.Text = "label5";
+            this.asstCountLbl.AutoSize = true;
+            this.asstCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asstCountLbl.Location = new System.Drawing.Point(135, 72);
+            this.asstCountLbl.Name = "asstCountLbl";
+            this.asstCountLbl.Size = new System.Drawing.Size(87, 16);
+            this.asstCountLbl.TabIndex = 21;
+            this.asstCountLbl.Text = "assistCount";
+            // 
+            // agentCountLbl
+            // 
+            this.agentCountLbl.AutoSize = true;
+            this.agentCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agentCountLbl.Location = new System.Drawing.Point(135, 95);
+            this.agentCountLbl.Name = "agentCountLbl";
+            this.agentCountLbl.Size = new System.Drawing.Size(85, 16);
+            this.agentCountLbl.TabIndex = 22;
+            this.agentCountLbl.Text = "agentCount";
+            // 
+            // trainerCountLbl
+            // 
+            this.trainerCountLbl.AutoSize = true;
+            this.trainerCountLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trainerCountLbl.Location = new System.Drawing.Point(135, 117);
+            this.trainerCountLbl.Name = "trainerCountLbl";
+            this.trainerCountLbl.Size = new System.Drawing.Size(90, 16);
+            this.trainerCountLbl.TabIndex = 23;
+            this.trainerCountLbl.Text = "trainerCount";
             // 
             // ProfessionalsForm
             // 
@@ -506,6 +554,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Label totalSpentLbl;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label trainerCountLbl;
+        private System.Windows.Forms.Label agentCountLbl;
+        private System.Windows.Forms.Label asstCountLbl;
+        private System.Windows.Forms.Label lawyerCountLbl;
     }
 }
 
