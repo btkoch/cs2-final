@@ -147,5 +147,38 @@ namespace cs2_final
             athleteSalary.Show();
             this.Hide();
         }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove this\n     professional from the database?", "Remove Professional", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //gathers the cell values for row to remove
+                int row = int.Parse(bindingNavigatorPositionItem.Text) - 1;
+                if (row >= 0)
+                {
+                    //show message with professional type, and name of professional removed
+                    MessageBox.Show($"{this.professionalsDataGridView.Rows[row].Cells[3].Value.ToString()}:  " +
+                                    $"{this.professionalsDataGridView.Rows[row].Cells[1].Value.ToString()} " +
+                                    $"{this.professionalsDataGridView.Rows[row].Cells[2].Value.ToString()} removed from database");
+
+                    //uses the binding navigator text box to get current row and sets athID & athSal values.
+                    professionalsDataGridView.Rows.RemoveAt(row);
+                    //call methods to save changes to DB
+                    this.Validate();
+                    this.professionalsBindingSource.EndEdit();
+                    this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+
+                    //call method to update counters and labels
+                    UpdatePreviewData();
+                }
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+            }
+
+
+        }
     }
 }
