@@ -19,7 +19,11 @@ namespace cs2_final
         {
             InitializeComponent();
         }
-
+        private void AthleteSalary_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Athletes' table. You can move, or remove it, as needed.
+            this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
+        }
         private void submitBtn_Click(object sender, EventArgs e)
         {
             string fName, lName;
@@ -68,12 +72,6 @@ namespace cs2_final
             // Only enable submit button when valid number is entered
             if (decimal.TryParse(salaryTxt.Text, out salary) && salary > 0) { submitBtn.Enabled = true; }
             else { submitBtn.Enabled = false; }
-        }
-
-        private void AthleteSalary_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Athletes' table. You can move, or remove it, as needed.
-            this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
         }
 
         int athID;

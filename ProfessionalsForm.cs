@@ -22,6 +22,22 @@ namespace cs2_final
             _athleteSalary = athleteSalary;
             _athID = athID;
         }
+        private void ProfessionalsForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed. 
+            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
+            this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals, _athID);
+            salaryLbl.Text = _athleteSalary.ToString("C");
+            athIDLbl.Text = _athID.ToString();
+            UpdatePreviewData();
+        }
+        private void professionalsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.professionalsBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
+
+        }
         private void AddProfessional()
         {
             Professional prof = GetProfessional();
@@ -110,17 +126,6 @@ namespace cs2_final
             }
             return null;
         }
-
-        private void ProfessionalsForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed. 
-            this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
-            this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals,_athID);
-            salaryLbl.Text = _athleteSalary.ToString("C");
-            athIDLbl.Text = _athID.ToString();
-            UpdatePreviewData();
-        }
-
         private void addBtn_Click(object sender, EventArgs e)
         {
             // Only continue if a category is selected
@@ -131,14 +136,6 @@ namespace cs2_final
             }
 
             AddProfessional();
-        }
-
-        private void professionalsBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.professionalsBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.hiredProfessionalsDBDataSet);
-
         }
 
         private void backBtn_Click(object sender, EventArgs e)
