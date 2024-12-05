@@ -175,7 +175,6 @@ namespace cs2_final
             }
             else if (dialogResult == DialogResult.No)
             {
-                //do something else
             }
 
 
