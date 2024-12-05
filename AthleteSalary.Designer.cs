@@ -264,6 +264,7 @@
             // athletesBindingNavigatorSaveItem
             // 
             this.athletesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.athletesBindingNavigatorSaveItem.Enabled = false;
             this.athletesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("athletesBindingNavigatorSaveItem.Image")));
             this.athletesBindingNavigatorSaveItem.Name = "athletesBindingNavigatorSaveItem";
             this.athletesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
