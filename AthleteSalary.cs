@@ -74,6 +74,8 @@ namespace cs2_final
         {
             // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Athletes' table. You can move, or remove it, as needed.
             this.athletesTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Athletes);
+            // Hide the ID column as this is irrelevant to the user experience
+            this.athletesDataGridView.Columns[0].Visible = false;
         }
 
         int athID;

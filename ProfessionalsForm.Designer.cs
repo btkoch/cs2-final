@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new System.Windows.Forms.Button();
@@ -107,7 +107,7 @@
             this.groupBox2.Controls.Add(this.nameTxt);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(852, 405);
+            this.groupBox2.Size = new System.Drawing.Size(737, 405);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Professionals";
@@ -136,7 +136,7 @@
             // 
             this.remainingLbl.AutoSize = true;
             this.remainingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainingLbl.Location = new System.Drawing.Point(742, 371);
+            this.remainingLbl.Location = new System.Drawing.Point(639, 371);
             this.remainingLbl.Name = "remainingLbl";
             this.remainingLbl.Size = new System.Drawing.Size(75, 16);
             this.remainingLbl.TabIndex = 25;
@@ -145,7 +145,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(644, 373);
+            this.label5.Location = new System.Drawing.Point(541, 373);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 24;
@@ -243,7 +243,7 @@
             this.professionalsDataGridView.Location = new System.Drawing.Point(275, 16);
             this.professionalsDataGridView.Name = "professionalsDataGridView";
             this.professionalsDataGridView.ReadOnly = true;
-            this.professionalsDataGridView.Size = new System.Drawing.Size(550, 344);
+            this.professionalsDataGridView.Size = new System.Drawing.Size(444, 344);
             this.professionalsDataGridView.TabIndex = 15;
             this.professionalsDataGridView.TabStop = false;
             // 
@@ -278,9 +278,9 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Salary";
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn5.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -435,7 +435,7 @@
             this.professionalsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.professionalsBindingNavigator.Name = "professionalsBindingNavigator";
             this.professionalsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.professionalsBindingNavigator.Size = new System.Drawing.Size(876, 25);
+            this.professionalsBindingNavigator.Size = new System.Drawing.Size(762, 25);
             this.professionalsBindingNavigator.TabIndex = 4;
             this.professionalsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -520,7 +520,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 430);
+            this.ClientSize = new System.Drawing.Size(762, 430);
             this.Controls.Add(this.professionalsBindingNavigator);
             this.Controls.Add(this.groupBox2);
             this.Name = "ProfessionalsForm";

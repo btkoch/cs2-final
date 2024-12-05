@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AthleteSalary));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.hireProfBtn = new System.Windows.Forms.Button();
             this.athFirstnameTxt = new System.Windows.Forms.TextBox();
@@ -183,7 +183,7 @@
             this.athletesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.athletesBindingNavigator.Name = "athletesBindingNavigator";
             this.athletesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.athletesBindingNavigator.Size = new System.Drawing.Size(477, 25);
+            this.athletesBindingNavigator.Size = new System.Drawing.Size(366, 25);
             this.athletesBindingNavigator.TabIndex = 2;
             this.athletesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -307,7 +307,7 @@
             this.athletesDataGridView.Name = "athletesDataGridView";
             this.athletesDataGridView.ReadOnly = true;
             this.athletesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.athletesDataGridView.Size = new System.Drawing.Size(446, 144);
+            this.athletesDataGridView.Size = new System.Drawing.Size(342, 144);
             this.athletesDataGridView.TabIndex = 2;
             this.athletesDataGridView.TabStop = false;
             // 
@@ -335,9 +335,9 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Salary";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn4.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -358,7 +358,7 @@
             this.AcceptButton = this.submitBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 344);
+            this.ClientSize = new System.Drawing.Size(366, 344);
             this.Controls.Add(this.athletesDataGridView);
             this.Controls.Add(this.athletesBindingNavigator);
             this.Controls.Add(this.groupBox1);

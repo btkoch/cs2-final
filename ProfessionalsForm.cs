@@ -116,6 +116,8 @@ namespace cs2_final
             // TODO: This line of code loads data into the 'hiredProfessionalsDBDataSet.Professionals' table. You can move, or remove it, as needed. 
             this.professionalsTableAdapter.Fill(this.hiredProfessionalsDBDataSet.Professionals);
             this.professionalsTableAdapter.FillBy(this.hiredProfessionalsDBDataSet.Professionals,_athID);
+            // Hide ID column as this is irrelevant to the user experience
+            this.professionalsDataGridView.Columns[0].Visible = false;
             salaryLbl.Text = _athleteSalary.ToString("C");
             athIDLbl.Text = _athID.ToString();
             UpdatePreviewData();
