@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfessionalsForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.removeBtn = new System.Windows.Forms.Button();
@@ -42,8 +42,6 @@
             this.lawyerCountLbl = new System.Windows.Forms.Label();
             this.totalSpentLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.athIDLbl = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.professionalsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,8 +94,6 @@
             this.groupBox2.Controls.Add(this.lawyerCountLbl);
             this.groupBox2.Controls.Add(this.totalSpentLbl);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.athIDLbl);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.professionalsDataGridView);
             this.groupBox2.Controls.Add(this.categoryPnl);
             this.groupBox2.Controls.Add(this.salaryLbl);
@@ -136,7 +132,7 @@
             // 
             this.remainingLbl.AutoSize = true;
             this.remainingLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remainingLbl.Location = new System.Drawing.Point(639, 371);
+            this.remainingLbl.Location = new System.Drawing.Point(101, 301);
             this.remainingLbl.Name = "remainingLbl";
             this.remainingLbl.Size = new System.Drawing.Size(75, 16);
             this.remainingLbl.TabIndex = 25;
@@ -145,7 +141,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(541, 373);
+            this.label5.Location = new System.Drawing.Point(3, 301);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 24;
@@ -194,40 +190,21 @@
             // totalSpentLbl
             // 
             this.totalSpentLbl.AutoSize = true;
-            this.totalSpentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSpentLbl.Location = new System.Drawing.Point(346, 373);
+            this.totalSpentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalSpentLbl.Location = new System.Drawing.Point(101, 276);
             this.totalSpentLbl.Name = "totalSpentLbl";
-            this.totalSpentLbl.Size = new System.Drawing.Size(65, 13);
+            this.totalSpentLbl.Size = new System.Drawing.Size(77, 16);
             this.totalSpentLbl.TabIndex = 19;
             this.totalSpentLbl.Text = "totalSpent";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(272, 373);
+            this.label3.Location = new System.Drawing.Point(30, 278);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 18;
-            this.label3.Text = "Total Spent: ";
-            // 
-            // athIDLbl
-            // 
-            this.athIDLbl.AutoSize = true;
-            this.athIDLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.athIDLbl.Location = new System.Drawing.Point(107, 321);
-            this.athIDLbl.Name = "athIDLbl";
-            this.athIDLbl.Size = new System.Drawing.Size(43, 16);
-            this.athIDLbl.TabIndex = 17;
-            this.athIDLbl.Text = "athID";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 324);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Athlete ID:";
+            this.label3.Text = "Total Spent:";
             // 
             // professionalsDataGridView
             // 
@@ -278,9 +255,9 @@
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Salary";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn5.HeaderText = "Salary";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -359,7 +336,7 @@
             // 
             this.salaryLbl.AutoSize = true;
             this.salaryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salaryLbl.Location = new System.Drawing.Point(107, 346);
+            this.salaryLbl.Location = new System.Drawing.Point(101, 253);
             this.salaryLbl.Name = "salaryLbl";
             this.salaryLbl.Size = new System.Drawing.Size(50, 16);
             this.salaryLbl.TabIndex = 13;
@@ -368,7 +345,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 348);
+            this.label1.Location = new System.Drawing.Point(20, 256);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 12;
@@ -569,8 +546,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton professionalsBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView professionalsDataGridView;
-        private System.Windows.Forms.Label athIDLbl;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

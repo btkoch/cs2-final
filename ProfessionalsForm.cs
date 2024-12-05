@@ -119,7 +119,6 @@ namespace cs2_final
             // Hide ID column as this is irrelevant to the user experience
             this.professionalsDataGridView.Columns[0].Visible = false;
             salaryLbl.Text = _athleteSalary.ToString("C");
-            athIDLbl.Text = _athID.ToString();
             UpdatePreviewData();
         }
 
@@ -178,8 +177,6 @@ namespace cs2_final
             else if (dialogResult == DialogResult.No)
             {
             }
-
-
         }
     }
 }
